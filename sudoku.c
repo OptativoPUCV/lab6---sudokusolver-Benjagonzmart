@@ -64,7 +64,8 @@ List* get_adj_nodes(Node* n)
                adj->sudo[i][j] = contador;
                pushBack(list, adj);
             }
-            else{
+            else
+            {
                contador++;
             }
              

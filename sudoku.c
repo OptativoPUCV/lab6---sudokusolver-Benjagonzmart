@@ -154,6 +154,7 @@ Node* DFS(Node* initial, int* cont)
             {
                push(s,aux);
                aux = next(list);
+               cont++;
             }
          free(n);
       }

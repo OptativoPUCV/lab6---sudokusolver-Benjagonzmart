@@ -105,13 +105,14 @@ List* get_adj_nodes(Node* n)
          {
             if(n->sudo[i][j] == 0)
             {
-               if(is_valid(n) == 1)
-               {
-                  Node* adj = copy(n);
-                  adj->sudo[i][j] = contador;
-                  pushBack(list, adj);
-                  
-               }
+               while(contador < 10)
+                  {
+                     Node* adj = copy(n);
+                     adj->sudo[i][j] = contador;
+                     if(is_valid(adj))
+                        pushBack(list, adj);
+                     contador++;
+                  }
                
             }
          }

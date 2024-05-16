@@ -154,12 +154,13 @@ Node* DFS(Node* initial, int* cont)
             {
                push(s,aux);
                aux = next(list);
-               cont++;
+               
             }
-         free(n);
+         pop(s);
       }
+   return NULL;
   
-  return NULL;
+  
 }
 
 

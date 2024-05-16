@@ -507,3 +507,15 @@ Thu 16 May 2024 07:23:19 PM UTC:
  1 file changed, 2 insertions(+)
  tests:  0|0
 4dffb60
+Thu 16 May 2024 07:30:05 PM UTC: 
+ sudoku.c | 14 ++------------
+ 1 file changed, 2 insertions(+), 12 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:160:10: error: implicit declaration of function ‘freeNode’; did you mean ‘createNode’? [-Werror=implicit-function-declaration]
+  160 |          freeNode(n);
+      |          ^~~~~~~~
+      |          createNode
+cc1: all warnings being treated as errors
+Compilation failed
+4cdc879

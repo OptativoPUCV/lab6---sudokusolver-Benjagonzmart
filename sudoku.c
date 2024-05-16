@@ -111,11 +111,8 @@ List* get_adj_nodes(Node* n)
                      adj->sudo[i][j] = contador;
                      if(is_valid(adj))
                         pushBack(list, adj);
-                     else
-                        free(adj);
                      contador++;
                   }
-               
             }
          }
          
@@ -148,26 +145,19 @@ Node* DFS(Node* initial, int* cont)
          Node* n = top(pila);
          pop(pila);
          (*cont)++;
-
-         
+         if(n == NULL) continue;
          if(is_final(n))
          {
-            
             return n;
          }
-            
          List* list = get_adj_nodes(n);
          Node* aux = first(list);
          while(aux != NULL)
             {
                push(pila,aux);
-               aux = next(list);
-               
+               aux = next(list);         
             }
-         free(n);
-         
-         
-         
+         freeNode(n);
       }
    return NULL;
   

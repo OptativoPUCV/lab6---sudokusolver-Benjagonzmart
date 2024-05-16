@@ -58,16 +58,15 @@ List* get_adj_nodes(Node* n)
       for(j = 0; j<9;j++)
          if(n->sudo[i][j] == 0)
          {
+            while(contador < 10)
+               {
+                  Node* adj = copy(n);
+                  adj->sudo[i][j] = contador;
+                  pushBack(list,adj);
+                  contador++;
+                  
+               }
             
-            Node* adj = copy(n);
-            adj->sudo[i][j] = contador;
-            pushBack(list,adj);
-            contador++;
-            adj = copy(n);
-            adj->sudo[i][j] = contador;
-            pushBack(list,adj);
-            
-
             
             
          }   

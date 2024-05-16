@@ -47,45 +47,45 @@ int is_valid(Node* n)
 {
    int i, j, k;
 
-    // Verificar filas
+    // verificar numeros repetidos en fila
     for (i = 0; i < 9; i++) {
-        int seen[10] = {0}; // Arreglo para marcar los números vistos en la fila
+        int marcados[10] = {0}; //arreglo de numeros marcados en las filas
         for (j = 0; j < 9; j++) {
             int num = n->sudo[i][j];
             if (num != 0) {
-                if (seen[num] == 1) {
-                    return 0; // Número repetido en la fila
+                if (marcados[num] == 1) {
+                    return 0;            
                 }
-                seen[num] = 1;
+                marcados[num] = 1;
             }
         }
     }
 
-    // Verificar columnas
+    // Verificar numeros repetidos en columna
     for (j = 0; j < 9; j++) {
-        int seen[10] = {0}; // Arreglo para marcar los números vistos en la columna
+        int marcados[10] = {0}; 
         for (i = 0; i < 9; i++) {
             int num = n->sudo[i][j];
             if (num != 0) {
-                if (seen[num] == 1) {
-                    return 0; // Número repetido en la columna
+                if (marcados[num] == 1) {
+                    return 0; 
                 }
-                seen[num] = 1;
+                  marcados[num] = 1;
             }
         }
     }
 
-    // Verificar submatrices de 3x3
+    // Verificar numeros repetidos en suubmatrices de 3x3
     for (i = 0; i < 9; i += 3) {
         for (j = 0; j < 9; j += 3) {
-            int seen[10] = {0}; // Arreglo para marcar los números vistos en la submatriz
+            int marcados[10] = {0}; 
             for (k = 0; k < 9; k++) {
                 int num = n->sudo[i + k / 3][j + k % 3];
                 if (num != 0) {
-                    if (seen[num] == 1) {
-                        return 0; // Número repetido en la submatriz
+                    if (marcados[num] == 1) {
+                        return 0; 
                     }
-                    seen[num] = 1;
+                     marcados[num] = 1;
                 }
             }
         }

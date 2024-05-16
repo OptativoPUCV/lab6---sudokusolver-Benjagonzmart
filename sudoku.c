@@ -69,7 +69,7 @@ List* get_adj_nodes(Node* n)
                adj = copy(n);
                adj->sudo[i][j] = 3;
                pushBack(list, adj);
-               adj = copy(n);
+               
                
                
                

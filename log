@@ -197,3 +197,9 @@ sudoku.c:69:28: error: implicit declaration of function ‘insertLast’ [-Werro
 cc1: all warnings being treated as errors
 Compilation failed
 0328cd3
+Thu 16 May 2024 05:50:58 PM UTC: 
+ sudoku.c | 24 ++----------------------
+ 1 file changed, 2 insertions(+), 22 deletions(-)
+ tests:  0|5
+total_score: 0/70
+4ebf193

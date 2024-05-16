@@ -52,7 +52,6 @@ int is_valid(Node* n){
 List* get_adj_nodes(Node* n)
 {
    List* list=createList();
-   int contador = 1;
    int i,j,k;
    for(i = 0; i < 9; i++)
       {
@@ -63,31 +62,12 @@ List* get_adj_nodes(Node* n)
                for(k = 0; k < 9; k++)
                   {
                      Node* adj = copy(n);
-                     adj->sudo[i][j] = contador;
-                     if(is_valid(adj))
-                        {
-                           insertLast(list,adj);
-                        }
-                     else
-                     {
-                        free(adj);
-                        
-                     }
-
-                     contador++;
-                     
-
-                     
+                       adj->sudo[i][j] = k;
+                       pushBack(list, adj);                  
                   }
-            }
-            
-       
-             
+            } 
          }
-         
-
-         
-         
+            
    }
    
    

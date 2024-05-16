@@ -145,17 +145,24 @@ Node* DFS(Node* initial, int* cont)
       {
          Node* n = top(pila);
          pop(pila);
+         (*cont)++;
 
          
-         if(is_final(n)) return n;
+         if(is_final(n))
+         {
+            freeStack(pila);
+            return n;
+         }
+            
          List* list = get_adj_nodes(n);
          Node* aux = first(list);
          while(aux != NULL)
             {
                push(pila,aux);
                aux = next(list);
-               (*cont)++;
+               
             }
+         free(n);
          
          
          

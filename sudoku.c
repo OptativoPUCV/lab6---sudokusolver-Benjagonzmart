@@ -64,8 +64,6 @@ List* get_adj_nodes(Node* n)
                adj->sudo[i][j] = contador;
                pushBack(list, adj);
                adj = copy(n);
-               adj->sudo[i][j] = 0;
-               pushBack(list, adj);
                
 
                

@@ -354,3 +354,24 @@ Thu 16 May 2024 07:00:17 PM UTC:
  1 file changed, 7 insertions(+)
  tests:  0|0
 c43ff80
+Thu 16 May 2024 07:07:24 PM UTC: 
+ sudoku.c | 18 ++++++++----------
+ 1 file changed, 8 insertions(+), 10 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:159:9: error: ‘aux’ undeclared (first use in this function)
+  159 |    free(aux)
+      |         ^~~
+sudoku.c:159:9: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:159:13: error: expected ‘;’ before ‘return’
+  159 |    free(aux)
+      |             ^
+      |             ;
+  160 |   return NULL;
+      |   ~~~~~~     
+sudoku.c:161:1: error: control reaches end of non-void function [-Werror=return-type]
+  161 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+3268332

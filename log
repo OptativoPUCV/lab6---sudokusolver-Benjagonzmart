@@ -74,3 +74,13 @@ Thu 16 May 2024 05:42:33 PM UTC:
  tests:  0|5
 total_score: 0/70
 03fa971
+Thu 16 May 2024 05:42:49 PM UTC: 
+ sudoku.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:70:13: error: ‘else’ without a previous ‘if’
+   70 |             else
+      |             ^~~~
+Compilation failed
+dca1396

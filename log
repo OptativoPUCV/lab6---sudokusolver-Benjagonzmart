@@ -452,3 +452,21 @@ sudoku.c:143:9: error: ‘s’ undeclared (first use in this function)
 sudoku.c:143:9: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 a0e8747
+Thu 16 May 2024 07:16:52 PM UTC: 
+ sudoku.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:140:13: error: expected ‘;’ before ‘Stack’
+  140 |    *cont = 0
+      |             ^
+      |             ;
+  141 | 
+  142 |    Stack* pila = createStack();
+      |    ~~~~~     
+sudoku.c:143:9: error: ‘pila’ undeclared (first use in this function)
+  143 |    push(pila,initial);
+      |         ^~~~
+sudoku.c:143:9: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+6fb2a04

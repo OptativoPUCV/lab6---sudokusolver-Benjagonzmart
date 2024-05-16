@@ -146,11 +146,19 @@ Node* DFS(Node* initial, int* cont)
          Node* n = top(s);
          pop(s);
          if(is_final(n)) return n;
+         List* L = get_adj_nodes(n);
+         while(L != NULL)
+            {
+               Node* adj = first(L);
+               push(s,adj);
+               popFront(L);
+               
+               
+            }
+         
          
          
       }
-   
-   
   return NULL;
 }
 

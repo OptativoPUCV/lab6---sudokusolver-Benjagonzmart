@@ -111,6 +111,8 @@ List* get_adj_nodes(Node* n)
                      adj->sudo[i][j] = contador;
                      if(is_valid(adj))
                         pushBack(list, adj);
+                     else
+                        free(adj);
                      contador++;
                   }
                

@@ -102,16 +102,20 @@ List* get_adj_nodes(Node* n)
    int i,j;
    for(i=0;i<9;i++)
       for(j = 0; j<9;j++)
-         if(n->sudo[i][j] == 0)
          {
-            while(contador < 10)
+            if(n->sudo[i][j] == 0)
+            {
+               if(is_valid(n) == 1)
                {
                   Node* adj = copy(n);
                   adj->sudo[i][j] = contador;
-                  pushBack(list,adj);
-                  contador++;  
+                  pushBack(list, adj);
+                  
                }
-         }   
+               
+            }
+         }
+         
    return list;
 }
 

@@ -45,52 +45,53 @@ void print_node(Node* n){
 
 int is_valid(Node* n)
 {
-   int *array[9];
-   int i,j,k;
-   for(i=0;i<9;i++)
-      {
-         array[i] = (int*) malloc(sizeof(int)*9);
-         for(j=0;j<9;j++)
-            {
-               array[i][j] = 0;
-               
-               
-            }
-         
-           
-         
-      }
-   for(i=0;i<9;i++)
-      {
-         for(j=0;j<9;j++)
-            {
-               if(n->sudo[i][j]!=0)
-               {
-                  if(array[i][n->sudo[i][j]-1]==1)
-                     return 0;
-                  
-               }
-               array[i][n->sudo[i][j]-1]=1;
-               
-               
-            }
-         
-      }
-   for(i=0;i<9;i++)
-      {
-         for(j=0;j<9;j++)
-            {
-               if(n->sudo[j][i]!=0)
-               {
-                  if(array[n->sudo[j][i]-1][i]==1)
-                     return 0;
-                  
-               }
-            }
-      }
-   
+   int i, j, k;
 
-    return 1;
+    // Verificar filas
+    for (i = 0; i < 9; i++) {
+        int seen[10] = {0}; // Arreglo para marcar los números vistos en la fila
+        for (j = 0; j < 9; j++) {
+            int num = n->sudo[i][j];
+            if (num != 0) {
+                if (seen[num] == 1) {
+                    return 0; // Número repetido en la fila
+                }
+                seen[num] = 1;
+            }
+        }
+    }
+
+    // Verificar columnas
+    for (j = 0; j < 9; j++) {
+        int seen[10] = {0}; // Arreglo para marcar los números vistos en la columna
+        for (i = 0; i < 9; i++) {
+            int num = n->sudo[i][j];
+            if (num != 0) {
+                if (seen[num] == 1) {
+                    return 0; // Número repetido en la columna
+                }
+                seen[num] = 1;
+            }
+        }
+    }
+
+    // Verificar submatrices de 3x3
+    for (i = 0; i < 9; i += 3) {
+        for (j = 0; j < 9; j += 3) {
+            int seen[10] = {0}; // Arreglo para marcar los números vistos en la submatriz
+            for (k = 0; k < 9; k++) {
+                int num = n->sudo[i + k / 3][j + k % 3];
+                if (num != 0) {
+                    if (seen[num] == 1) {
+                        return 0; // Número repetido en la submatriz
+                    }
+                    seen[num] = 1;
+                }
+            }
+        }
+    }
+
+    return 1; // El estado es válido
 }
 
 

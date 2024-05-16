@@ -84,3 +84,9 @@ sudoku.c:70:13: error: ‘else’ without a previous ‘if’
       |             ^~~~
 Compilation failed
 dca1396
+Thu 16 May 2024 05:42:54 PM UTC: 
+ sudoku.c | 4 ----
+ 1 file changed, 4 deletions(-)
+ tests:  0|5
+total_score: 0/70
+d4fb3cd

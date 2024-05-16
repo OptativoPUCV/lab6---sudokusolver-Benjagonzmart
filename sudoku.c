@@ -53,18 +53,32 @@ List* get_adj_nodes(Node* n)
 {
    List* list=createList();
    int contador = 1;
-   int i,j;
+   int i,j,k;
    for(i = 0; i < 9; i++)
       {
          for(j = 0; j < 9; j++)
          {
             if(n->sudo[i][j] == 0)
             {
-               Node *adj = copy(n);
-               adj->sudo[i][j] = contador;
-               contador++;
-               pushBack(list, adj);
-               
+               for(k = 0; k < 9; k++)
+                  {
+                     Node* adj = copy(n);
+                     adj->sudo[i][j] = contador;
+                     if(is_valid(adj))
+                        {
+                           insertLast(list,adj);
+                        }
+                     else
+                     {
+                        free(adj);
+                        
+                     }
+
+                     contador++;
+                     
+
+                     
+                  }
             }
             
        

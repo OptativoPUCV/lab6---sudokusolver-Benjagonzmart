@@ -416,3 +416,21 @@ Thu 16 May 2024 07:10:27 PM UTC:
  1 file changed, 4 insertions(+), 3 deletions(-)
  tests:  0|0
 c2694aa
+Thu 16 May 2024 07:15:06 PM UTC: 
+ sudoku.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:140:13: error: expected ‘;’ before ‘Stack’
+  140 |    *cont = 0
+      |             ^
+      |             ;
+  141 | 
+  142 |    Stack* s = createStack();
+      |    ~~~~~     
+sudoku.c:143:9: error: ‘s’ undeclared (first use in this function)
+  143 |    push(s,initial);
+      |         ^
+sudoku.c:143:9: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+50b91fa

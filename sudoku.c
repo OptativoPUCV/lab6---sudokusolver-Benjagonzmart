@@ -51,8 +51,42 @@ int is_valid(Node* n)
       {
          array[i] = (int*) malloc(sizeof(int)*9);
          for(j=0;j<9;j++)
-            array[i][j] = 0;
+            {
+               array[i][j] = 0;
+               
+               
+            }
          
+           
+         
+      }
+   for(i=0;i<9;i++)
+      {
+         for(j=0;j<9;j++)
+            {
+               if(n->sudo[i][j]!=0)
+               {
+                  if(array[i][n->sudo[i][j]-1]==1)
+                     return 0;
+                  
+               }
+               array[i][n->sudo[i][j]-1]=1;
+               
+               
+            }
+         
+      }
+   for(i=0;i<9;i++)
+      {
+         for(j=0;j<9;j++)
+            {
+               if(n->sudo[j][i]!=0)
+               {
+                  if(array[n->sudo[j][i]-1][i]==1)
+                     return 0;
+                  
+               }
+            }
       }
    
 
